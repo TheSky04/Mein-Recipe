@@ -1,0 +1,56 @@
+.nav__details-bookmark {
+  position: relative;
+}
+
+.bookmarks {
+  padding: 1rem 0;
+  position: absolute;
+  // right: 0;
+  top: 79.33px;
+  right: 0;
+  z-index: 10;
+  width: 40rem;
+  background-color: #fff;
+  box-shadow: 0 0.8rem 5rem 2rem rgba($color-primary, 0.1);
+
+  visibility: visible;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s 0.2s;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__field {
+    cursor: pointer;
+    padding: 0 4rem;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.nav__details-bookmark:hover .bookmarks {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.message {
+  &__icon {
+    color: $color-primary;
+  }
+
+  &__text {
+    color: $color-primary;
+  }
+
+  padding: 4rem;
+}

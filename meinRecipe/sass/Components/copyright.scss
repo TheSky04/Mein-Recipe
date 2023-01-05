@@ -1,0 +1,19 @@
+.copyright {
+  width: 90%;
+  margin: 0 auto;
+  color: $color-primary-light;
+  margin-top: 3rem;
+  &__text {
+    font-size: 1.3rem;
+  }
+
+  &__name {
+    text-decoration: none;
+    color: $color-primary-dark;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

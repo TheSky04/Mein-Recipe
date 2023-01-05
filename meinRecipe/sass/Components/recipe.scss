@@ -1,0 +1,59 @@
+.recipe {
+  background-color: $color-white;
+  overflow-y: scroll;
+  height: 70%;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    border-bottom: 2px solid $color-white;
+    padding: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgba($color-primary-light, 1);
+      color: $color-white;
+      cursor: pointer;
+      transform: translateY(0.2rem);
+    }
+  }
+
+  &__item--active {
+    background-color: rgba($color-primary-light, 1);
+    color: $color-white !important;
+  }
+
+  &__item--active &__item--detail {
+    color: $color-white;
+  }
+
+  &__item--active {
+    background-color: rgba($color-primary-light, 1);
+    color: $color-white;
+  }
+
+  &__item:hover &__item--detail {
+    color: $color-white;
+  }
+
+  &__image {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+  }
+
+  &__item--detail {
+    color: $color-primary;
+  }
+
+  &__item--title {
+    font-size: 1.6rem;
+  }
+
+  &__item--publisher {
+    font-size: 1.2rem;
+  }
+}

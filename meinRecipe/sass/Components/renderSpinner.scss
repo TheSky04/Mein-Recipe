@@ -1,0 +1,21 @@
+.renderSpinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+
+  &__icon {
+    color: $color-primary;
+    font-size: 5rem;
+    animation: rotate 1s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

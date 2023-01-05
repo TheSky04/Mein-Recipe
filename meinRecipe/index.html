@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mein Recipe &ndash; Cook whatever you want!</title>
+    <meta
+      name="description"
+      description="myRecipe is an easy-to-use application where you will learn the ingredients in the recipe and how to cook the dish you want to make, according to the desired number of servings."
+    />
+    <meta name="theme-color" content="#be4bdb" />
+    <meta
+      name="keywords"
+      content="HTML, CSS,SASS,SCSS,JavaScript,Parcel,Food,Recipe,API,Search Recipe,fetch API"
+    />
+    <meta name="author" content="Furkan Baş" />
+    <link rel="icon" type="image/png" href="logos/logo-nobackground.png" />
+    <link rel="apple-touch-icon" href="logos/logo-180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <script type="module" src="js/controller.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="nav">
+        <div class="nav__logo--box">
+          <img
+            class="nav__logo--image"
+            src="logos/logo-nobackground.png"
+            alt="MyRecipe logo"
+          />
+          <p class="nav__logo--text">Mein Recipe</p>
+        </div>
+        <form class="nav__form">
+          <input
+            type="text"
+            class="nav__input"
+            placeholder="Search for a recipe like pizza,salad,pasta etc..."
+          />
+          <button class="nav__button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <ul class="nav__details--box">
+          <li class="nav__details nav__details-addRecipe">
+            <div class="nav__details--icon">
+              <i class="fa-solid fa-square-pen"></i>
+            </div>
+            <p class="nav__details--text">Add Recipe</p>
+          </li>
+          <li class="nav__details nav__details-bookmark">
+            <div class="nav__details--icon">
+              <i class="fa-regular fa-bookmark"></i>
+            </div>
+            <p class="nav__details--text">Bookmarks</p>
+            <div class="bookmarks">
+              <ul class="bookmarks__list">
+                <div class="message">
+                  <i class="fa-regular fa-face-smile message__icon"></i>
+                  <p class="message__text">
+                    No bookmarks yet. Find a nice recipe and bookmark it :)
+                  </p>
+                </div>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="app__content">
+        <div class="recipe__left">
+          <div class="recipe">
+            <div class="recipe__list--box">
+              <ul class="recipe__list">
+                <!-- <div class="renderSpinner">
+                  <i class="fa-solid fa-spinner renderSpinner__icon"></i>
+                </div> -->
+                <!-- <p class="error__text error__results">
+                  <i class="fa-solid fa-triangle-exclamation error__icon"></i>
+                  The recipe you have been searched is not found. Please try another one!
+                </p> -->
+
+                <!-- <a href="#55648979132131" class="recipe__item">
+                  <img
+                    class="recipe__image"
+                    src="http://forkify-api.herokuapp.com/images/BBQChickenPizzawithCauliflowerCrust5004699695624ce.jpg"
+                    alt="recipe title"
+                  />
+                  <div class="recipe__item--detail">
+                    <p class="recipe__item--title">Test Title</p>
+                    <p class="recipe__item--publisher">Test Publisher</p>
+                  </div>
+                </a> -->
+              </ul>
+            </div>
+          </div>
+          <div class="pagination">
+            <!-- <button class="pagination__btn pagination__btn--prev">
+              <p class="pagination__text">
+                &larr; Page <span class="pagination__number">1</span>
+              </p>
+            </button>
+            <button class="pagination__btn pagination__btn--next">
+              <p class="pagination__text">
+                Page <span class="pagination__number">3</span> &rarr;
+              </p>
+            </button> -->
+          </div>
+          <div class="copyright">
+            <p class="copyright__text">
+              This application made by
+              <a
+                href="https://www.instagram.com/thesky04/?hl=en"
+                target="_blank"
+                class="copyright__name"
+                >Furkan Baş.</a
+              >
+              All rights reserved &copy; 11/2022.
+            </p>
+          </div>
+        </div>
+        <!-- <div class="error">
+          <p class="error__text">
+            <i class="fa-solid fa-triangle-exclamation error__icon"></i>
+            The recipe you have been searched is not found. Please try another one!
+          </p>
+        </div> -->
+        <div class="recipe__right">
+          <!-- <div class="details">
+            <img
+              class="details__img"
+              src="http://forkify-api.herokuapp.com/images/BBQChickenPizzawithCauliflowerCrust5004699695624ce.jpg"
+              alt="recipe photo
+            "
+            />
+            <div class="details__detail">
+              <p class="details__title">Super Pizza</p>
+              <div class="details__detail--box">
+                <div class="details__container">
+                  <i class="fa-regular fa-clock details__icon"></i>
+                  <p class="details__time"><span>30</span> Minutes</p>
+                </div>
+                <div class="details__container">
+                  <i class="fa-solid fa-person details__icon"></i>
+                  <p class="details__time">
+                    <span class="details__servings--number">5</span> Servings
+                  </p>
+                  <i
+                    class="fa-sharp fa-solid fa-circle-plus details__icon details__icon--pointer"
+                  ></i>
+                  <i
+                    class="fa-sharp fa-solid fa-circle-minus details__icon details__icon--pointer"
+                  ></i>
+                </div>
+                <div class="details__container">
+                  <i
+                    class="fa-thin fa-circle-bookmark details__icon details__icon--pointer"
+                  ></i>
+                  <i
+                    class="fa-regular fa-bookmark details__icon details__icon--pointer"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="details__ingredients">
+              <p class="details__ingredients--title">Recipe Ingredients</p>
+              <ul class="details__list">
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>5 potato</span>
+                </li>
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>3 tomato</span>
+                </li>
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>1 kg sugar</span>
+                </li>
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>350 gr water</span>
+                </li>
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>0.5 kg strawberry</span>
+                </li>
+                <li class="details__item">
+                  <i class="fa-solid fa-check details__icon"></i>
+                  <span>1 kg banana</span>
+                </li>
+              </ul>
+            </div>
+            <div class="details__howtocook">
+              <p class="details__howtocook--title">How to cook ?</p>
+              <p class="details__howtocook--text">
+                This recipe was carefully designed and tested by
+                <span class="publisher">101 Cookbooks</span>. Please check out
+                directions at their website.
+              </p>
+              <div class="text-center">
+                <button class="details__howtocook--btn">
+                  Go to their website &rarr;
+                </button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="modal hidden">
+      <i class="fa-solid fa-xmark modal__times"></i>
+      <form class="modal__form">
+        <p class="modal__text">Create Your Own Recipe!</p>
+        <div class="modal__group--box--container">
+          <div class="modal__group--box">
+            <div class="modal__group">
+              <label for="title" class="modal__label">Title </label>
+              <input
+                required
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Super Pizza"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="publisher" class="modal__label">Publisher </label>
+              <input
+                required
+                type="text"
+                name="publisher"
+                id="publisher"
+                placeholder="Furkan Baş"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="imageUrl" class="modal__label">Image Url </label>
+              <input
+                required
+                type="text"
+                name="imageUrl"
+                value="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                id="imageUrl"
+                placeholder="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="sourceUrl" class="modal__label">Source Url </label>
+              <input
+                required
+                type="text"
+                name="sourceUrl"
+                id="sourceUrl"
+                placeholder="https://www.bbcgoodfood.com/recipes/exotic-avocado-salad"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="servings" class="modal__label">Servings </label>
+              <input
+                required
+                type="text"
+                name="servings"
+                id="servings"
+                placeholder="4"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="cookingTime" class="modal__label"
+                >Cooking Time
+              </label>
+              <input
+                required
+                type="text"
+                name="cookingTime"
+                id="cookingTime"
+                placeholder="30"
+                class="modal__input"
+              />
+            </div>
+          </div>
+          <div class="modal__group--box">
+            <div class="modal__group">
+              <label for="ingredient 1" class="modal__label"
+                >Ingredient 1
+              </label>
+              <input
+                required
+                type="text"
+                name="ingredient 1"
+                id="ingredient 1"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="ingredient 2" class="modal__label"
+                >Ingredient 2
+              </label>
+              <input
+                required
+                type="text"
+                name="ingredient 2"
+                id="ingredient 2"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="ingredient 3" class="modal__label"
+                >Ingredient 3
+              </label>
+              <input
+                required
+                type="text"
+                name="ingredient 3"
+                id="ingredient 3"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="ingredient 4" class="modal__label"
+                >Ingredient 4
+              </label>
+              <input
+                type="text"
+                name="ingredient 4"
+                id="ingredient 4"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="ingredient 5" class="modal__label"
+                >Ingredient 5
+              </label>
+              <input
+                type="text"
+                name="ingredient 5"
+                id="ingredient 5"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+            <div class="modal__group">
+              <label for="ingredient 6" class="modal__label"
+                >Ingredient 6
+              </label>
+              <input
+                type="text"
+                name="ingredient 6"
+                id="ingredient 6"
+                placeholder="3,kg,sugar"
+                class="modal__input"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="modal__btn">Create Recipe!</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

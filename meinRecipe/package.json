@@ -1,0 +1,20 @@
+{
+  "name": "myrecipe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css -w",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Furkan Baş",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "core-js": "^3.26.1",
+    "regenerator-runtime": "^0.13.11"
+  }
+}

@@ -1,0 +1,19 @@
+.error {
+  width: 80%;
+  margin: auto;
+  transform: translateY(-10rem);
+  &__text {
+    font-size: 1.6rem;
+    color: $color-primary;
+  }
+
+  &__icon {
+    font-size: 2.2rem;
+    color: $color-primary;
+  }
+
+  &__results {
+    width: 80%;
+    margin: 5rem auto;
+  }
+}

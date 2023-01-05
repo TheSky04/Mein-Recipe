@@ -1,0 +1,57 @@
+$color-primary-lightest: #f3d9fa;
+$color-primary-solight: #eebefa;
+$color-primary-light: #da77f2;
+$color-primary: #be4bdb;
+$color-primary-dark: #9c36b5;
+
+$color-white: #fff;
+
+$box-shadow: 0 2rem 4rem rgba(255, 255, 255, 0.3);
+
+$color-gray: #444;
+
+// https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient($color-primary, $color-primary-dark);
+}
+
+.hidden--prev {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hidden--next {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}

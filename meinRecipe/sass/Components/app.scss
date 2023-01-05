@@ -1,0 +1,15 @@
+.app {
+  width: 120rem;
+  height: 70rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  background-color: $color-white;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    height: 100%;
+  }
+}

@@ -1,0 +1,129 @@
+.details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content min-content min-content;
+
+  &__img {
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  }
+
+  &__detail {
+    grid-row: 2 / 3;
+
+    background-color: $color-primary-solight;
+  }
+
+  &__detail--box {
+    display: grid;
+    grid-template-columns: 30fr 40fr 30fr;
+    justify-items: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+    color: $color-primary-dark;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  &__time {
+  }
+
+  &__bookmark {
+    color: $color-primary-dark;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    color: $color-primary-dark;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__icon--pointer {
+    cursor: pointer;
+  }
+
+  &__ingredients {
+    grid-row: 3 / 4;
+    font-size: 1.3rem;
+    background-color: $color-primary-lightest;
+  }
+
+  &__ingredients--title {
+    text-align: center;
+    color: $color-primary;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 3rem;
+    gap: 1rem;
+  }
+
+  &__item {
+    list-style-type: none;
+    font-size: 1.4rem;
+  }
+
+  &__howtocook {
+    grid-row: 4 / 5;
+  }
+
+  &__howtocook--title {
+    text-align: center;
+    color: $color-primary;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  &__howtocook--text {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    color: $color-primary-light;
+  }
+
+  &__servings--number {
+    font-weight: 600;
+  }
+
+  &__howtocook--btn {
+    background: none;
+    border: none;
+    background-color: $color-primary;
+    padding: 1.2rem 1.5rem;
+    color: $color-white;
+    border-radius: 1rem;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.pagination {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 2rem 0;
+
+  &__btn {
+    background: none;
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+    width: 50%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color-primary, 0.9);
+    }
+  }
+
+  &__btn--prev {
+  }
+
+  &__btn--next {
+  }
+
+  &__page {
+  }
+}
